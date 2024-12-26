@@ -3,88 +3,91 @@
 @section('content')
     <div class="layout-wrapper">
         <!-- Begin page -->
-            <div class="main-content">
-                <div class="page-content">
-                    <div class="container-fluid">
-                        <!-- start page title -->
-                        <section class="content-header">
-                            <div class="container-fluid">
-                                <div class="row mb-2">
-                                    <div class="col-auto">
-                                        <h1>Tambah Mahasiswa</h1>
-                                    </div>
-                                    
-                                </div>
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <!-- Start page title -->
+                    <div class="page-title-box">
+                        <div class="row align-items-center">
+                            <div class="col-auto">
+                                <h2 class=" text-black">Tambah Mahasiswa</h2>
                             </div>
-                        </section>
-                        <!-- end page title -->
-                        {{-- Start Row --}}
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-header d-flex justify-content-between">
-                                        <a href="{{ route('mahasiswas.index') }}" class="btn btn-success btn-sm">
-                                            << Kembali</a>
-                                    </div>
-                
-                                    <div class="card-body">
-                                        <form action="{{ route('mahasiswas.store') }}" method="POST">
-                                            @csrf
-                                            <div class="form-group row">
-                                                <label for="nim" class="col-md-4">NIM Mahasiswa</label>
-                                                <input type="text" name="nim" id="nim" class="form-control col-md-4" required>
+                        </div>
+                    </div>
+                    <!-- End page title -->
+
+                    <!-- Start Row -->
+                    <div class="row mt-5">
+                        <div class="col-md-12 mx-auto">
+                            <div class="card shadow-sm">
+                                <div class="card-header">
+                                    <h4 class= "d-flex  text-black">Tambah Mahasiswa</h4>
+                                </div>
+                                <hr>
+                                <div class="card-body">
+                                    <form action="{{ route('mahasiswas.store') }}" method="POST">
+                                        @csrf
+                                        <div class="form-group row mb-3 align-items-center">
+                                            <label for="nama" class="col-2 col-form-label">Nama</label>
+                                            <div class="col-10">
+                                                <input id="nama" name="nama" placeholder="Masukkan nama"
+                                                    type="text" required="required" class="form-control">
                                             </div>
-                                            <div class="form-group row">
-                                                <label for="nama" class="col-md-4">Nama Mahasiswa</label>
-                                                <input type="text" name="nama" id="nama" class="form-control col-md-4" required>
+                                        </div>
+                                        <div class="form-group row mb-3 align-items-center">
+                                            <label for="nim" class="col-2 col-form-label">NIM</label>
+                                            <div class="col-10">
+                                                <input id="nim" name="nim" placeholder="Masukkan NIM"
+                                                    type="text" class="form-control" required="required">
                                             </div>
-                                            <div class="form-group row">
-                                                <label for="jurusan" class="col-md-4">Program Studi</label>
-                                                <select name="jurusan" id="jurusan" class="form-control col-md-4" required>
+                                        </div>
+                                        <div class="form-group row mb-3 align-items-center">
+                                            <label for="jurusan" class="col-2 col-form-label">Program Studi</label>
+                                            <div class="col-10">
+                                                <select name="jurusan" id="jurusan" class="form-control" required>
                                                     <option value="" hidden>Pilih Prodi</option>
                                                     <option value="TI">Teknik Informatika</option>
                                                     <option value="SI">Sistem Informasi</option>
                                                     <option value="BD">Bisnis Digital</option>
                                                 </select>
                                             </div>
-                                            <div class="form-group row">
-                                                <label for="email" class="col-md-4">Email Mahasiswa</label>
-                                                <input type="email" name="email" id="email" class="form-control col-md-4" required>
-                                            </div>
-                                            <div class="d-flex justify-content-center">
-                                                <input type="submit" value="Tambah" class="btn btn-primary mt-3">
-                                            </div>
-                                        </form>
-                                        <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
                                         </div>
-                                    </div>
-                
+                                        <div class="form-group row mb-3 align-items-center">
+                                            <label for="email" class="col-2 col-form-label">Email</label>
+                                            <div class="col-10">
+                                                <input id="email" name="email" placeholder="Masukkan email"
+                                                    type="text" class="form-control" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-end">
+                                            <button type="submit" class="btn btn-primary me-2">Kirim</button>
+                                            <button type="reset" class="btn btn-danger">Batal</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
-                
                         </div>
                     </div>
-                    <!-- End Page-content -->
-
-
-
-                    <footer class="footer">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-12">
-                                    ©
-                                    <script>
-                                        document.write(new Date().getFullYear())
-                                    </script> Veltrix<span class="d-none d-sm-inline-block"> - Crafted with
-                                        <i class="mdi mdi-heart text-danger"></i> by Themesbrand.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </footer>
+                    <!-- End Row -->
 
                 </div>
-                <!-- end main content-->
+                <!-- End Page-content -->
 
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                ©
+                                <script>
+                                    document.write(new Date().getFullYear())
+                                </script> Veltrix<span class="d-none d-sm-inline-block"> - Crafted with
+                                    <i class="mdi mdi-heart text-danger"></i> by Themesbrand.</span>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
             </div>
+            <!-- End main content-->
+        </div>
     </div>
 @endsection

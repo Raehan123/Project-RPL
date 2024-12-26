@@ -11,7 +11,7 @@
                         <div class="container-fluid">
                             <div class="row mb-2">
                                 <div class="col-auto">
-                                    <h1>Edit Data Dosen</h1>
+                                    <h1>Edit Dosen</h1>
                                 </div>
 
                             </div>
@@ -19,38 +19,46 @@
                     </section>
                     <!-- end page title -->
                     {{-- Start Row --}}
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-header d-flex justify-content-between">
-                                    <a href="{{ route('dosens.index') }}" class="btn btn-success btn-sm">
-                                        << Kembali</a>
+                    <div class="row mt-5">
+                        <div class="col-12 mx-auto">
+                            <div class="card shadow-sm">
+                                <div class="card-header">
+                                    <h4 class= "d-flex text-black">Edit Dosen</h4>
                                 </div>
+                                <hr>
                                 <div class="card-body">
                                     <form action="{{ route('dosens.store') }}" method="POST">
                                         @csrf
-                                        <div class="form-group row">
-                                            <label for="nip" class="col-md-4">NIP Dosen</label>
-                                            <input type="hidden" name="id" value="{{ $dosens->id }}">
-                                            <input type="text" name="nip" id="nip"
-                                                value="{{ $dosens->nip }}" class="form-control col-md-4" required>
+                                        <div class="form-group row mb-3 align-items-center">
+                                            <input type="hiddem" name="id" value="{{ $dosens->id }}">
+                                            <label for="nip" class="col-2 col-form-label">NIP</label>
+                                            <div class="col-10">
+                                                <input id="nip" name="nip" placeholder="Masukkan NIP"
+                                                    type="text" class="form-control" value="{{ $dosens->nip }}"
+                                                    required="required">
+                                            </div>
                                         </div>
-                                        <div class="form-group row">
-                                            <label for="nama" class="col-md-4">Nama Dosen</label>
-                                            <input type="text" name="nama" id="nama"
-                                                value="{{ $dosens->nama }}" class="form-control col-md-4" required>
+                                        <div class="form-group row mb-3 align-items-center">
+                                            <label for="nama" class="col-2 col-form-label">Nama Dosen</label>
+                                            <div class="col-10">
+                                                <input id="nama" name="nama" placeholder="Masukkan nama"
+                                                    type="text" required="required" value="{{ $dosens->nama }}"
+                                                    class="form-control">
+                                            </div>
                                         </div>
-                                        <div class="form-group row">
-                                            <label for="email" class="col-md-4">Email Dosen</label>
-                                            <input type="text" name="email" id="email"
-                                                value="{{ $dosens->email }}" class="form-control col-md-4" required>
+                                        <div class="form-group row mb-3 align-items-center">
+                                            <label for="email" class="col-2 col-form-label">Email</label>
+                                            <div class="col-10">
+                                                <input id="email" name="email" placeholder="Masukkan email"
+                                                    type="text" required="required" value="{{ $dosens->email }}"
+                                                    class="form-control">
+                                            </div>
                                         </div>
-                                        <div class="d-flex justify-content-center">
-                                            <input type="submit" value="Edit" class="btn btn-primary">
+                                        <div class="d-flex justify-content-end">
+                                            <button type="submit" class="btn btn-primary me-2">Simpan</button>
+                                            <a href="{{ route('dosens.index') }}" class="btn btn-danger">Batal</a>
                                         </div>
                                     </form>
-                                    <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                                    </div>
                                 </div>
 
                             </div>

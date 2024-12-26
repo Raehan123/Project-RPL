@@ -3,21 +3,20 @@
         <div class="d-flex">
             <!-- LOGO -->
             <div class="navbar-brand-box">
-                <a href="index.html" class="logo logo-dark">
+                <a href="{{ route('dashboard') }}" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="{{asset('assets/images/logo-sm.png')}}" alt="" height="10" >
+                        <div class="d-flex justify-center align-items-center mt-3">
+                            <img src="{{ asset('assets/images/logo-finalease-removebg-preview.png') }}" alt=""
+                                height="40">
+                        </div>
                     </span>
-                    <span class="logo-lg">
-                        <img src="{{asset('assets/images/logo-dark.png')}}" alt="">
-                    </span>
-                </a>
 
-                <a href="index.html" class="logo logo-light">
-                    <span class="logo-sm">
-                        <img src="{{asset('assets/images/logo-sm.png')}}" alt="" height="22" class="mt-4">
-                    </span>
                     <span class="logo-lg">
-                        <img src="{{asset('assets/images/logo-light.png')}}" alt="" height="25" class="mt-4" >
+                        <div class="d-flex justify-center align-items-center mt-2">
+                            <img src="{{ asset('assets/images/logo-finalease-removebg-preview.png') }}" alt=""
+                                height="60">
+                            <h3 class="text-light">Final Ease</h3>
+                        </div>
                     </span>
                 </a>
             </div>
@@ -70,5 +69,3 @@
         </div>
     </div>
 </header>
-
-

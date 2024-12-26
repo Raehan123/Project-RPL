@@ -19,6 +19,8 @@
     <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css">
     <!-- App Css-->
     <link href="{{asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    
 
     @stack('style')
 </head>
@@ -62,8 +64,10 @@
     <script src="{{asset('assets/libs/chartist-plugin-tooltips/chartist-plugin-tooltip.min.js')}}"></script>
 
     <script src="{{asset('assets/js/pages/dashboard.init.js')}}"></script>
+    <script src="https://kit.fontawesome.com/138e30ea05.js" crossorigin="anonymous"></script>
 
     <script src="{{asset('assets/js/app.js')}}"></script>
+    <script src="{{asset('assets/js/pages/calendar.js')}}"></script>
 
     @stack('script')
 </body>

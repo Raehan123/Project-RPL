@@ -9,47 +9,53 @@
                     <div class="page-title-box">
                         <div class="row align-items-center">
                             <div class="col-auto">
-                                <h1 class="display-6 text-black">Daftar Dosen</h1>
+                                <h1 class="display-6 text-black">Jadwal Bimbingan</h1>
                             </div>
                         </div>
                     </div>
                     <!-- end page title -->
                     {{-- Start Row --}}
                     <div class="card-body">
-                        <a href="{{ route('dosens.create') }}" class="btn btn-primary btn-lg">+ Tambah</a>
+                        <a href="{{ route('bimbingans.create') }}" class="btn btn-primary btn-lg">+ Tambah</a>
                         <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
                             <div class="row mt-3">
                                 <div class="col-sm-12">
-                                    <table id="example2"
-                                        class="table table-primary"
-                                        aria-describedby="example2_info">
+                                    <table id="example2" class="table table-primary" aria-describedby="example2_info">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>NIP</th>
+                                                <th>Tanggal Bimbingan</th>
+                                                <th>Jam</th>
                                                 <th>Nama Dosen</th>
-                                                <th>Email Dosen</th>
+                                                <th>Nama Mahasiswa</th>
+                                                <th>Lokasi</th>
+                                                <th>Topik</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($dosens as $dsn)
+                                            @foreach ($bimbingans as $bmb)
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $dsn->nip }}</td>
-                                                    <td>{{ $dsn->nama }}</td>
-                                                    <td>{{ $dsn->email }}</td>
+                                                    <td>{{ $bmb->tanggal }}</td>
+                                                    <td>{{ $bmb->jam }}</td>
+                                                    <td>{{ $bmb->dosen->nama }}</td>
+                                                    <td>{{ $bmb->mahasiswa->nama }}</td>
+                                                    <td>{{ $bmb->lokasi }}</td>
+                                                    <td>{{ $bmb->topik }}</td>
                                                     <td>
-                                                        <a href="{{ route('dosens.edit', $dsn->id) }}"
+                                                        <a href="{{ route('bimbingans.edit', $bmb->id) }}"
                                                             onclick="if(!confirm('Yakin Mau di Edit nih?')) {return false}"
-                                                            class="btn btn-primary btn-md"><i class="fa-solid fa-wrench fa-rotate-270"></i></a>
-                                                        <form action="{{ route('dosens.destroy', $dsn->id) }}"
+                                                            class="btn btn-primary btn-md"><i
+                                                                class="fa-solid fa-wrench fa-rotate-270"></i></a>
+                                                        <form action="{{ route('bimbingans.destroy', $bmb->id) }}"
                                                             method="POST" class="d-inline">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="btn btn-danger btn-md"
-                                                                onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fa-solid fa-trash"></i></button>
-                                                                
+                                                                onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i
+                                                                    class="fa-solid fa-trash"></i></button>
+
                                                         </form>
                                                     </td>
                                                 </tr>

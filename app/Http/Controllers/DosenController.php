@@ -56,9 +56,9 @@ class DosenController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Dosen $dosen)
+    public function edit($id)
     {
-        $dosens = Dosen::findOrFail($dosen->id);
+        $dosens = Dosen::findOrFail($id);
         return view('dosens.edit', compact('dosens'));
     }
 

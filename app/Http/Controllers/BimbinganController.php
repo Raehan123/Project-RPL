@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Bimbingan;
 use App\Models\Dosen;
 use App\Models\Mahasiswa;
+use App\Models\Notification;
+use App\Notifications\BimbinganNotification;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class BimbinganController extends Controller
@@ -116,4 +119,34 @@ class BimbinganController extends Controller
             return redirect()->route('bimbingans.index')->with('success', 'Data berhasil dihapus');
         }
     }
+
+    public function createNotification(Request $request)
+    {
+        // Validasi input
+        $validated = $request->validate([
+            'mahasiswa_id' => 'required|exists:mahasiswas,id',
+            'dosen_id' => 'required|exists:dosens,id',
+            'message' => 'required|string',
+            'notify_at' => 'required|date',
+        ]);
+
+        // Membuat notifikasi
+        $notification = Notification::create([
+            'mahasiswa_id' => $validated['mahasiswa_id'],
+            'dosen_id' => $validated['dosen_id'],
+            'message' => $validated['message'],
+            'notify_at' => Carbon::parse($validated['notify_at']),
+        ]);
+
+        // Mengirimkan notifikasi email kepada mahasiswa
+         // Kirimkan notifikasi kepada mahasiswa
+         $mahasiswa = Mahasiswa::find($validated['mahasiswa_id']);
+         $mahasiswa->notify(new BimbinganNotification($notification));
+ 
+         // Kirimkan notifikasi kepada dosen
+         $dosen = Dosen::find($validated['dosen_id']);
+         $dosen->notify(new BimbinganNotification($notification));
+        return response()->json(['message' => 'Notifikasi telah ditambahkan']);
+    }
+
 }

@@ -61,7 +61,7 @@
                                         </div>
                                         <div class="d-flex justify-content-end">
                                             <button type="submit" class="btn btn-primary me-2">Kirim</button>
-                                            <button type="reset" class="btn btn-danger">Batal</button>
+                                            <a href="{{ route('mahasiswas.index') }}" class="btn btn-danger">Batal</a>
                                         </div>
                                     </form>
                                 </div>

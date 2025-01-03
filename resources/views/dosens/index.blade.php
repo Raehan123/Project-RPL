@@ -72,7 +72,7 @@
                                 <script>
                                     document.write(new Date().getFullYear())
                                 </script> Veltrix<span class="d-none d-sm-inline-block"> - Crafted with
-                                    <i class="mdi mdi-heart text-danger"></i> by Themesbrand.</span>
+                                    <i class="mdi mdi-fish text-warning"></i> by Nemo.</span>
                             </div>
                         </div>
                     </div>

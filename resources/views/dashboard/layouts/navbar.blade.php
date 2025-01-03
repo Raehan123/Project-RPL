@@ -2,29 +2,30 @@
     <div class="navbar-header">
         <div class="d-flex">
             <!-- LOGO -->
-            <div class="navbar-brand-box">
-                <a href="{{ route('dashboard') }}" class="logo logo-light">
+            <div class="bg-primary">
+            <div class="navbar-brand-box bg-primary">
+                <a href="{{ route('dashboard') }}" class="logo bg-primary">
                     <span class="logo-sm">
                         <div class="d-flex justify-center align-items-center mt-3">
                             <img src="{{ asset('assets/images/logo-finalease-removebg-preview.png') }}" alt=""
-                                height="40">
+                                height="30">
                         </div>
                     </span>
 
-                    <span class="logo-lg">
+                    <span class="logo-lg bg-primary">
                         <div class="d-flex justify-center align-items-center mt-2">
                             <img src="{{ asset('assets/images/logo-finalease-removebg-preview.png') }}" alt=""
-                                height="60">
+                                height="50">
                             <h3 class="text-light">Final Ease</h3>
                         </div>
                     </span>
                 </a>
             </div>
+        </div>
 
             <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
                 <i class="mdi mdi-menu"></i>
             </button>
-
         </div>
 
         <div class="d-flex">
@@ -49,9 +50,7 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-                    <a class="dropdown-item" href="#"><i
-                            class="mdi mdi-account-circle font-size-17 align-middle me-1"></i> Profile</a>
-                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-item"></div>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <a class="dropdown-item text-danger" data-toggle="dropdown" href="route('logout')"

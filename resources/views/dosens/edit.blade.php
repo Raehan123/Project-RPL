@@ -30,7 +30,7 @@
                                     <form action="{{ route('dosens.store') }}" method="POST">
                                         @csrf
                                         <div class="form-group row mb-3 align-items-center">
-                                            <input type="hiddem" name="id" value="{{ $dosens->id }}">
+                                            <input type="hidden" name="id" value="{{ $dosens->id }}">
                                             <label for="nip" class="col-2 col-form-label">NIP</label>
                                             <div class="col-10">
                                                 <input id="nip" name="nip" placeholder="Masukkan NIP"

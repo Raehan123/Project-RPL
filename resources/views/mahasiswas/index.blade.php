@@ -20,7 +20,7 @@
                         <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
                             <div class="row mt-3">
                                 <div class="col-sm-12">
-                                    <table id="example2" class="table table-hover table-light"
+                                    <table id="example2" class="table table-primary"
                                         aria-describedby="example2_info">
                                         <thead>
                                             <tr>
@@ -65,7 +65,6 @@
                     </div> <!-- container-fluid -->
                 </div>
                 <!-- End Page-content -->
-
                 <footer class="footer">
                     <div class="container-fluid">
                         <div class="row">
@@ -74,11 +73,12 @@
                                 <script>
                                     document.write(new Date().getFullYear())
                                 </script> Veltrix<span class="d-none d-sm-inline-block"> - Crafted with
-                                    <i class="mdi mdi-heart text-danger"></i> by Themesbrand.</span>
+                                    <i class="mdi mdi-fish text-warning"></i> by Nemo.</span>
                             </div>
                         </div>
                     </div>
                 </footer>
+                
 
             </div>
             <!-- end main content-->

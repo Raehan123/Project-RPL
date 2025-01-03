@@ -11,13 +11,14 @@
                             <span class="logo-sm">
                                 <i class="mdi mdi-account-circle mdi-36px"></i>
                             </span>
-
                             <span class="logo-lg">
                                 <i class="mdi mdi-account-circle" style="font-size: 64px"></i>
                                 <h3 class="text-light">{{ Auth::user()->name }}</h3>
                             </span>
                         </a>
                     </div>
+                    <br>
+                    <br>
                 <li>
                     <a href="{{ url('/dashboard') }}"
                         class="nav-link {{ request()->is('dashboard') ? 'bg-primary text-white' : '' }}">

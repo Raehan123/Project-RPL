@@ -30,7 +30,7 @@ class DosenController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'nip' => 'required|min:8|max:16',
+            'nip' => 'required|min:3|max:16',
             'nama' => 'required|min:3|max:50',
             'email' => 'required|email',
         ]);

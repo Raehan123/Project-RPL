@@ -128,8 +128,8 @@
 
                     <!-- Remember Me -->
                     <div class="form-check mb-3">
-                        <input id="remember_me" type="checkbox" name="remember" class="form-check-input">
-                        <label for="remember_me" class="form-check-label">Remember Me</label>
+                        <input id="remember" type="checkbox" name="remember" class="form-check-input">
+                        <label for="remember" class="form-check-label">Remember Me</label>
                     </div>
 
                     <div class="d-flex justify-content-center">

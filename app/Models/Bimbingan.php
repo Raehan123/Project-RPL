@@ -10,7 +10,7 @@ class Bimbingan extends Model
     use HasFactory;
     protected $table = 'bimbingans';
 
-    protected $fillable = ['tanggal', 'jam', 'dosen_id', 'mahasiswa_id', 'lokasi', 'topik'];
+    protected $fillable = ['tanggal', 'jam', 'jam_bimbingan', 'dosen_id', 'mahasiswa_id', 'lokasi', 'topik', 'status'];
 
     public function dosen() {
         return $this->belongsTo(Dosen::class);

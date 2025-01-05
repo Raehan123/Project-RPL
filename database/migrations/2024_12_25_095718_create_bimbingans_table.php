@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->date('tanggal');
             $table->time('jam');
+            $table->time('jam_bimbingan');
             $table->unsignedBigInteger('dosen_id');
             $table->foreign('dosen_id')->references('id')->on('dosens')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('mahasiswa_id');

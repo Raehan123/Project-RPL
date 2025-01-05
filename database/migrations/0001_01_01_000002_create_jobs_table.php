@@ -17,8 +17,9 @@ return new class extends Migration
             $table->longText('payload');
             $table->unsignedTinyInteger('attempts');
             $table->unsignedInteger('reserved_at')->nullable();
-            $table->unsignedInteger('available_at');
-            $table->unsignedInteger('created_at');
+            $table->unsignedInteger('available_at')->index();
+            $table->unsignedInteger('created_at')->index();
+            $table->unsignedInteger('updated_at')->nullable();
         });
 
         Schema::create('job_batches', function (Blueprint $table) {

@@ -20,31 +20,17 @@
                     <br>
                     <br>
                 <li>
-                    <a href="{{ url('/dashboard') }}"
-                        class="nav-link {{ request()->is('dashboard') ? 'bg-primary text-white' : '' }}">
+                    <a href="{{ url('/dosen') }}"
+                        class="nav-link {{ request()->is('dosen') ? 'bg-primary text-white' : '' }}">
                         <i class="fa-solid fa-table-columns"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('/mahasiswa') }}"
-                        class="nav-link {{ request()->is('mahasiswa') ? 'bg-primary text-white' : '' }}">
-                        <i class="fa-solid fa-user"></i>
-                        <span>Mahasiswa</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url('/dosen') }}"
-                        class="nav-link {{ request()->is('dosen') ? 'bg-primary text-white' : '' }}">
-                        <i class="fa-solid fa-user-tie"></i>
-                        <span>Dosen</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ url('/bimbingan') }}"
+                    <a href="{{ url('') }}"
                         class="nav-link {{ request()->is('bimbingan') ? 'bg-primary text-white' : '' }}">
                         <i class="fa-solid fa-calendar-days"></i>
-                        <span>Bimbingan</span>
+                        <span>Jadwal Bimbingan</span>
                     </a>
                 </li>
         </div>

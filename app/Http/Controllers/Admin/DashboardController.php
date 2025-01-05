@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+
 
 use App\Http\Controllers\Controller;
 use App\Models\Bimbingan;
@@ -15,6 +16,6 @@ class DashboardController extends Controller
         $jumlahMahasiswa = Mahasiswa::count();
         $jumlahDosen = Dosen::count();
         $jumlahJadwalBimbingan = Bimbingan::count();
-        return view('dashboard.dashboard', compact('jumlahMahasiswa', 'jumlahDosen', 'jumlahJadwalBimbingan'));
+        return view('admin.dashboard', compact('jumlahMahasiswa', 'jumlahDosen', 'jumlahJadwalBimbingan'));
     }
 }

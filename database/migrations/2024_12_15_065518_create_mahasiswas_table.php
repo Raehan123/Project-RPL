@@ -13,11 +13,15 @@ return new class extends Migration
     {
         Schema::create('mahasiswas', function (Blueprint $table) {
             $table->id();
-            $table->string('nim');
+            $table->string('nim')->unique();
             $table->string('nama');
             $table->string('jurusan');
-            $table->string('email');
+            $table->string('email')->unique();
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
+
+            // Tambahkan foreign key dengan onDelete cascade
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -29,3 +33,4 @@ return new class extends Migration
         Schema::dropIfExists('mahasiswas');
     }
 };
+

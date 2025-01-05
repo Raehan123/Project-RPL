@@ -1,4 +1,4 @@
-@extends('dashboard.layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
     <div class="layout-wrapper">
@@ -21,7 +21,7 @@
                         <div class="col-md-12 mx-auto">
                             <div class="card shadow-sm">
                                 <div class="card-header">
-                                    <h4 class= "d-flex  text-black">Tambah Mahasiswa</h4>
+                                    <h4 class="d-flex text-black">Tambah Mahasiswa</h4>
                                 </div>
                                 <hr>
                                 <div class="card-body">
@@ -30,7 +30,7 @@
                                         <div class="form-group row mb-3 align-items-center">
                                             <label for="nama" class="col-2 col-form-label">Nama</label>
                                             <div class="col-10">
-                                                <input id="nama" name="nama" placeholder="Masukkan nama"
+                                                <input id="nama" name="name" placeholder="Masukkan nama"
                                                     type="text" required="required" class="form-control">
                                             </div>
                                         </div>
@@ -56,7 +56,14 @@
                                             <label for="email" class="col-2 col-form-label">Email</label>
                                             <div class="col-10">
                                                 <input id="email" name="email" placeholder="Masukkan email"
-                                                    type="text" class="form-control" required="required">
+                                                    type="email" class="form-control" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row mb-3 align-items-center">
+                                            <label for="password" class="col-2 col-form-label">Password</label>
+                                            <div class="col-10">
+                                                <input id="password" name="password" placeholder="Masukkan password"
+                                                    type="password" class="form-control" required="required">
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-end">

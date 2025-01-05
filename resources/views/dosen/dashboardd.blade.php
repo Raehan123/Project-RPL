@@ -1,4 +1,4 @@
-@extends('dashboard.layouts.app')
+@extends('dosen.layouts.app')
 
 @section('content')
     <div class="main-content">
@@ -34,33 +34,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card mini-stat bg-primary text-white">
-                            <div class="card-body">
-                                <div class="mb-4">
-                                    <div class="float-start mini-stat-img me-4">
-                                        <i class="fa-solid fa-user-tie fa-2x mt-3"></i>
-                                    </div>
-                                    <h5 class="font-size-16 text-uppercase text-white-50">Dosen</h5>
-                                    <h4 class="fw-medium font-size-24">{{ $jumlahDosen }}</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card mini-stat bg-primary text-white">
-                            <div class="card-body">
-                                <div class="mb-4">
-                                    <div class="float-start mini-stat-img me-4">
-                                        <i class="fa-regular fa-calendar-days fa-2x mt-3"></i>
-                                    </div>
-                                    <h5 class="font-size-16 text-uppercase text-white-50">Jadwal Bimbingan</h5>
-                                    <h4 class="fw-medium font-size-24">{{ $jumlahJadwalBimbingan }}</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    
                 <!-- end row -->
                 <div class="row">
                     <div class="col-12">

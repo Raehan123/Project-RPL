@@ -30,11 +30,11 @@
     <!-- Begin page -->
     <div id="layout-wrapper">
 
-        @include('dashboard.layouts.navbar')
+        @include('admin.layouts.navbar')
         
 
         <!-- ========== Left Sidebar Start ========== -->
-        @include('dashboard.layouts.sidebar')
+        @include('admin.layouts.sidebar')
         <!-- Left Sidebar End -->
 
         <!-- ============================================================== -->

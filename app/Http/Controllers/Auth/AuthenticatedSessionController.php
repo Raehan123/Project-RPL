@@ -8,6 +8,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use App\Models\User;
+
 
 class AuthenticatedSessionController extends Controller
 {
@@ -28,9 +30,19 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        // Periksa role pengguna dan arahkan ke dashboard sesuai role
+    if (Auth::user()->role === 'admin') {
+        return redirect()->route('dashboard');
+    } elseif (Auth::user()->role === 'dosen') {
+        return redirect()->route('dashboardd');
+    } elseif (Auth::user()->role === 'mahasiswa') {
+        return redirect()->route('welcome');
     }
 
+    // Jika role tidak dikenali, logout dan tampilkan error
+    Auth::logout();
+    return redirect('/login')->withErrors('Role tidak valid');
+}
     /**
      * Destroy an authenticated session.
      */

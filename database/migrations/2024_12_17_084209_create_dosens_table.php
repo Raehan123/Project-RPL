@@ -13,10 +13,14 @@ return new class extends Migration
     {
         Schema::create('dosens', function (Blueprint $table) {
             $table->id();
-            $table->string('nip');
+            $table->string('nip')->unique();
             $table->string('nama');
-            $table->string('email');
+            $table->string('email')->unique();
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
+
+            // Tambahkan foreign key dengan onDelete cascade
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

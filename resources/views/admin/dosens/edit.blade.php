@@ -1,4 +1,4 @@
-@extends('dashboard.layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
     <div class="layout-wrapper">
@@ -13,62 +13,73 @@
                                 <div class="col-auto">
                                     <h1>Edit Dosen</h1>
                                 </div>
-
                             </div>
                         </div>
                     </section>
                     <!-- end page title -->
+
                     {{-- Start Row --}}
                     <div class="row mt-5">
                         <div class="col-12 mx-auto">
                             <div class="card shadow-sm">
                                 <div class="card-header">
-                                    <h4 class= "d-flex text-black">Edit Dosen</h4>
+                                    <h4 class="d-flex text-black">Edit Dosen</h4>
                                 </div>
                                 <hr>
                                 <div class="card-body">
-                                    <form action="{{ route('dosens.store') }}" method="POST">
+                                    <form action="{{ route('dosens.update', $dosen->id) }}" method="POST">
                                         @csrf
+                                        @method('PUT') <!-- Menggunakan method PUT untuk update -->
+
+                                        <!-- NIP -->
                                         <div class="form-group row mb-3 align-items-center">
-                                            <input type="hidden" name="id" value="{{ $dosens->id }}">
                                             <label for="nip" class="col-2 col-form-label">NIP</label>
                                             <div class="col-10">
                                                 <input id="nip" name="nip" placeholder="Masukkan NIP"
-                                                    type="text" class="form-control" value="{{ $dosens->nip }}"
-                                                    required="required">
+                                                    type="text" class="form-control" value="{{ $dosen->nip }}" required>
                                             </div>
                                         </div>
+
+                                        <!-- Nama Dosen -->
                                         <div class="form-group row mb-3 align-items-center">
                                             <label for="nama" class="col-2 col-form-label">Nama Dosen</label>
                                             <div class="col-10">
-                                                <input id="nama" name="nama" placeholder="Masukkan nama"
-                                                    type="text" required="required" value="{{ $dosens->nama }}"
-                                                    class="form-control">
+                                                <input id="nama" name="name" placeholder="Masukkan nama"
+                                                    type="text" class="form-control" value="{{ $dosen->user->name }}" required>
                                             </div>
                                         </div>
+
+                                        <!-- Email -->
                                         <div class="form-group row mb-3 align-items-center">
                                             <label for="email" class="col-2 col-form-label">Email</label>
                                             <div class="col-10">
                                                 <input id="email" name="email" placeholder="Masukkan email"
-                                                    type="text" required="required" value="{{ $dosens->email }}"
-                                                    class="form-control">
+                                                    type="email" class="form-control" value="{{ $dosen->user->email }}" required>
                                             </div>
                                         </div>
+
+                                         <!-- Password -->
+                                         <div class="form-group row mb-3 align-items-center">
+                                            <label for="password" class="col-2 col-form-label">Password</label>
+                                            <div class="col-10">
+                                                <input id="password" name="password" placeholder="Masukkan password baru (Opsional)"
+                                                    type="password" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <!-- Tombol Submit -->
                                         <div class="d-flex justify-content-end">
                                             <button type="submit" class="btn btn-primary me-2">Simpan</button>
                                             <a href="{{ route('dosens.index') }}" class="btn btn-danger">Batal</a>
                                         </div>
                                     </form>
                                 </div>
-
                             </div>
                         </div>
-
                     </div>
+                    <!-- End Row -->
                 </div>
                 <!-- End Page-content -->
-
-
 
                 <footer class="footer">
                     <div class="container-fluid">
@@ -83,10 +94,8 @@
                         </div>
                     </div>
                 </footer>
-
             </div>
             <!-- end main content-->
-
         </div>
     </div>
 @endsection

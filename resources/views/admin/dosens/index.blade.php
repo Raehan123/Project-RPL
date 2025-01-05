@@ -1,4 +1,4 @@
-@extends('dashboard.layouts.app')
+@extends('admin.layouts.app')
 @section('content')
     <!-- Begin page -->
     <div id="layout-wrapper">
@@ -14,21 +14,21 @@
                         </div>
                     </div>
                     <!-- end page title -->
+
                     {{-- Start Row --}}
                     <div class="card-body">
                         <a href="{{ route('dosens.create') }}" class="btn btn-primary btn-lg">+ Tambah</a>
                         <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
                             <div class="row mt-3">
                                 <div class="col-sm-12">
-                                    <table id="example2"
-                                        class="table table-primary"
-                                        aria-describedby="example2_info">
+                                    <table id="example2" class="table table-primary" aria-describedby="example2_info">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
                                                 <th>NIP</th>
                                                 <th>Nama Dosen</th>
                                                 <th>Email Dosen</th>
+                                                <th>Password</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -37,19 +37,23 @@
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $dsn->nip }}</td>
-                                                    <td>{{ $dsn->nama }}</td>
-                                                    <td>{{ $dsn->email }}</td>
+                                                    <td>{{ $dsn->user->name }}</td>
+                                                    <td>{{ $dsn->user->email }}</td>
+                                                    <td>{{ $dsn->user->password }}</td>
                                                     <td>
                                                         <a href="{{ route('dosens.edit', $dsn->id) }}"
                                                             onclick="if(!confirm('Yakin Mau di Edit nih?')) {return false}"
-                                                            class="btn btn-primary btn-md"><i class="fa-solid fa-wrench fa-rotate-270"></i></a>
+                                                            class="btn btn-primary btn-md">
+                                                            <i class="fa-solid fa-wrench fa-rotate-270"></i>
+                                                        </a>
                                                         <form action="{{ route('dosens.destroy', $dsn->id) }}"
                                                             method="POST" class="d-inline">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="btn btn-danger btn-md"
-                                                                onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fa-solid fa-trash"></i></button>
-                                                                
+                                                                onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                                                                <i class="fa-solid fa-trash"></i>
+                                                            </button>
                                                         </form>
                                                     </td>
                                                 </tr>
@@ -80,7 +84,6 @@
 
             </div>
             <!-- end main content-->
-
         </div>
     </div>
     <!-- END layout-wrapper -->
